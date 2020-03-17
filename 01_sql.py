@@ -11,8 +11,8 @@ conn = sqlite3.connect('new.db')
 cursor = conn.cursor()
 
 # Create a table
-cursor.execute('''CREATE TABLE population 
-	(city TEXT, state TEXT, population INT)
+cursor.execute('''CREATE TABLE cars
+	(make TEXT, model, TEXT, quantity INT)
 	''')
 
 # Close the database connection
