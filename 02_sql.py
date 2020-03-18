@@ -1,15 +1,17 @@
 import sqlite3
 
-conn = sqlite3.connect('new.db')
+with sqlite3.connect('new.db') as connection:
 
-cursor = conn.cursor()
+	c = connection.cursor()
+	try:
 
-cursor.execute("INSERT INTO population VALUES ('New York City', \
-	'NY', 8400000)")
+		c.execute("INSERT INTO populations VALUES ('New York City', \
+		'NY', 8400000)")
 
-cursor.execute("INSERT INTO population VALUES ('San Fransisco', \
-	'CA', 800000)")
+		c.execute("INSERT INTO populations VALUES ('San Fransisco', \
+		'CA', 800000)")
+	
 
-conn.commit()
+	except sqlite3.OperationalError:
 
-conn.close()
+		print("Oops! Something went wrong. Try again...")
