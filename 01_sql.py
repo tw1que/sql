@@ -12,7 +12,7 @@ cursor = conn.cursor()
 
 # Create a table
 cursor.execute('''CREATE TABLE cars
-	(make TEXT, model, TEXT, quantity INT)
+	(make TEXT, model TEXT, quantity INT)
 	''')
 
 # Close the database connection
